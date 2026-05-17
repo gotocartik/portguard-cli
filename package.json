@@ -1,0 +1,32 @@
+{
+  "name": "portguard-cli",
+  "version": "1.0.0",
+  "description": "A lightweight Node.js utility and CLI tool that detects busy ports, finds available ports, and optionally kills blocking processes.",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "portguard-cli": "./cli.js"
+  },
+  "license": "MIT",
+  "keywords": [
+    "port",
+    "port-finder",
+    "port-checker",
+    "port-killer",
+    "port-scanner",
+    "free-port",
+    "available-port",
+    "kill-port",
+    "eaddrinuse",
+    "cli",
+    "developer-tools"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gotocartik/portguard-cli.git"
+  },
+  "funding": "https://buymeacoffee.com/gotocartik",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
