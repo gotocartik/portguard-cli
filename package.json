@@ -1,6 +1,6 @@
 {
   "name": "portguard-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A lightweight Node.js utility and CLI tool that detects busy ports, finds available ports, and optionally kills blocking processes.",
   "type": "module",
   "main": "index.js",
