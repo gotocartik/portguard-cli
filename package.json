@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "bin": {
-    "portguard-cli": "./cli.js"
+    "portguard-cli": "cli.js"
   },
   "license": "MIT",
   "keywords": [
