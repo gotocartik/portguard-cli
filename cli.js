@@ -14,18 +14,29 @@ const args = process.argv.slice(2);
 const portIndex = args.findIndex((a) => !a.startsWith("--"));
 const port = portIndex !== -1 ? parseInt(args[portIndex]) : null;
 const kill = args.includes("--kill");
+const rangeArg = args.find((a) => a.startsWith("--range="));
+let range = null;
+if (rangeArg) {
+  const parts = rangeArg.split("=")[1].split("-");
+  const rStart = parseInt(parts[0]);
+  const rEnd = parseInt(parts[1]);
+  if (!isNaN(rStart) && !isNaN(rEnd) && rStart > 0 && rEnd <= 65535 && rStart < rEnd) {
+    range = [rStart, rEnd];
+  }
+}
 
 if (!port || isNaN(port) || port < 1 || port > 65535) {
   console.log(`\n  ${bold}portguard-cli${reset} — check and manage ports\n`);
   console.log(`  ${dim}Usage:${reset}`);
   console.log(`    npx portguard-cli ${cyan}<port>${reset}`);
-  console.log(`    npx portguard-cli ${cyan}<port>${reset} ${yellow}--kill${reset}\n`);
+  console.log(`    npx portguard-cli ${cyan}<port>${reset} ${yellow}--kill${reset}`);
+  console.log(`    npx portguard-cli ${cyan}<port>${reset} ${yellow}--range=3000-3010${reset}\n`);
   process.exit(1);
 }
 
 console.log(`\n  ${bold}🔍 Checking port ${port}...${reset}\n`);
 
-const result = await portguard(port, { next: true, kill: false });
+const result = await portguard(port, { next: true, kill: false, range });
 
 if (result === port) {
   console.log(`  ${green}✅ Port ${port} is available${reset}\n`);

@@ -19,6 +19,8 @@
     "kill-port",
     "eaddrinuse",
     "cli",
+    "port-range",
+    "range-scanner",
     "developer-tools"
   ],
   "repository": {

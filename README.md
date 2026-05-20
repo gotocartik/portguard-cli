@@ -1,6 +1,7 @@
 # portguard-cli
 
 ![npm](https://img.shields.io/npm/dt/portguard-cli)
+![npm](https://img.shields.io/npm/dw/portguard-cli)
 ![npm version](https://img.shields.io/npm/v/portguard-cli)
 ![license](https://img.shields.io/npm/l/portguard-cli)
 
